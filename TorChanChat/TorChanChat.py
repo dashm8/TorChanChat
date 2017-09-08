@@ -101,7 +101,7 @@ def startup(opts):
         Server(opts[2]).Run()
     else:
         usrname = raw_input('enter username: ')
-        Client(usrname,opts[2],opts[3])
+        Client(usrname,opts[2],int(opts[3]))
 
 
 print "welcome to Tor Chan Chat (:"
