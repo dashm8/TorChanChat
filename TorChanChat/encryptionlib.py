@@ -23,11 +23,12 @@ class RSA:
         return True
 
     def __init__(self):       
-        self.q = random_prime()
-        self.p = random_prime()
+        self.q = self.random_prime()
+	while 1:
+	        self.p = self.random_prime()
+		if self.q != self.p:
+			break
 
-    def __init__(self,emp):
-        self.emp = emp
 
     def gcd(a, b):
         while b != 0:

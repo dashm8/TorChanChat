@@ -92,13 +92,13 @@ class Server:
             self.broadcast(usr,pubk)
             conn.send(self.sendlst())
             self.clients.append(usr)
-            start_new_thread(self.handler,(usr))
+            start_new_thread(self.handler,(usr,None))
 
 
 
 def startup(opts):
     if opts[1] == '-s':
-        Server(opts[2]).Run()
+        Server(int(opts[2])).Run()
     else:
         usrname = raw_input('enter username: ')
         Client(usrname,opts[2],int(opts[3]))
